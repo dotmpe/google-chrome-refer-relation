@@ -1,0 +1,24 @@
+<!doctype html>
+<script>
+  var filter = {urls:["<all_urls>"]};
+  var opt_extraInfoSpec = ['blocking'];
+  //var callback = function(details) {
+  //  var tabId = details.tabId;
+  //  var url = details.url;
+  //  //chrome.tabs.executeScript(tabId, {code:"window.console.log('"+url+"');"});
+  //  return ;// details;
+  //}
+  //chrome.webRequest.onBeforeRequest.addListener(
+  //  callback, filter, opt_extraInfoSpec);
+  var callback2 = function(details) {
+    var requestHeaders = details.requestHeaders;
+    if (!requestHeaders)
+      requestHeaders = [];
+    requestHeaders.push({name:'X-Relationship',value:details.type});
+    //console.log(requestHeaders);
+    return {requestHeaders:requestHeaders};
+  }
+  chrome.webRequest.onBeforeSendHeaders.addListener(
+      callback2, filter, opt_extraInfoSpec);
+</script>
+

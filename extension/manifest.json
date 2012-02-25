@@ -1,0 +1,12 @@
+{
+  "name": "Referer Relationship",
+  "version": "0.1.0",
+  "description": "Send X-Relationship HTTP headers.",
+  "background_page": "background.html",
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ]
+}
