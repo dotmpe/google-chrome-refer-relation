@@ -1,6 +1,6 @@
 Refer Relation
 ==============
-The `refer-relation` add on for Google Chrome [GC]
+The `refer-relation` add-on for Google Chrome [GC]
 should use a HTTP request header to identify the relationship that is traversed.
 
 Discusssion
