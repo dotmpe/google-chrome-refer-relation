@@ -1,2 +1,3 @@
 *.zip
 .*.sw[pon]
+.DS_Store
