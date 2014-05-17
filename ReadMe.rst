@@ -20,3 +20,16 @@ Specs
     in particular nofollow if not already implemented by GC
   - There is no known HTML header, X-Relationship is used in communication
 
+Status
+  - It does add a header, but does not resolve to the clicked anchor yet.
+    Also, handler catches all requests. Not just the resource request triggered
+    by the user.
+
+Changelog
+---------
+2014-05-17
+  - Updated to new manifest format.
+  - Added content-script and started scraping for href/rel, trouble is syncing
+    with onRequest and recognizing which requests to amend.
+
+

@@ -3,11 +3,26 @@
   "name": "Referrer Relationship",
   "version": "0.1.0",
   "description": "Send X-Relationship HTTP headers.",
-  "background": "background.html",
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      // run_at: "document_idle", // default
+      // all_frames: false, // default: top level only
+      "js": [
+          "components/underscore/underscore.js",
+          "components/underscore.string/dist/underscore.string.min.js",
+          "components/jquery/dist/jquery.js",
+          "content-anchor-scan.js"
+      ]
+  }],
+  "background": {
+      "scripts": ["background.js"]
+  },
   "permissions": [
     "tabs",
     "webRequest",
     "webRequestBlocking",
+    "https://*/",
+    "http://*/",
     "<all_urls>"
   ]
 }
